@@ -2,11 +2,11 @@ import { pathsToModuleNameMapper } from 'ts-jest';
 import { compilerOptions } from './tsconfig.json';
 
 export default {
-  moduleFileExtensions: ['js', 'json', 'ts'],
+  moduleFileExtensions: ['js', 'json', 'ts', 'node'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>',
   }),
-  testRegex: '.*\\.spec\\.ts$',
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.ts$',
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
